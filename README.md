@@ -1,6 +1,6 @@
 # 🧠 8-bit RISC CPU in Verilog
 
-This project is a simple 8-bit **RISC (Reduced Instruction Set Computer)** CPU designed using Verilog HDL. It supports basic arithmetic and logical operations, branching, and memory access. Designed for learning, simulation, and implementation on small FPGAs.
+This project is a simple 8-bit **RISC (Reduced Instruction Set Computer)** CPU designed using Verilog HDL. It supports basic arithmetic and logical operations, branching, and memory instruction. 
 
 ---
 
@@ -35,7 +35,10 @@ This project is a simple 8-bit **RISC (Reduced Instruction Set Computer)** CPU d
 - `alu.v` – Arithmetic and Logic Unit  
 - `register_file.v` – General-purpose registers (16 total: R1–R16)  
 - `control_unit.v` – Instruction decoder and FSM controller  
-- `memory.v` – Simple RAM for program and data  
+- `data_memory.v` – Simple 256X8 RAM for data
+- `instruction_memory.v`- Holds the instruction to be executed
+- `immediate_mode.v`- if the instruction is immediate mode then instead of loading the second operand from memory it directly assigns the value
+- `program_counter.v`- checks if jmp or jz condition true, if true then jump to corresponding instruction and if false increase prog_counter by one
 - `top.v` – Top-level integration of datapath and controller  
 - `tb.v` – Testbench for simulation
 
